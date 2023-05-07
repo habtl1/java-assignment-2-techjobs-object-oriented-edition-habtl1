@@ -1,4 +1,8 @@
 package org.launchcode.techjobs.oo;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 
 import mockit.Expectations;
 import mockit.Mocked;
@@ -19,6 +23,7 @@ public class TestTaskFour extends AbstractTest {
 
     @Tested
     JobTest jobTest;
+
 
     @Test
     public void testTestSettingJobIdExists () throws ClassNotFoundException {
@@ -66,6 +71,7 @@ public class TestTaskFour extends AbstractTest {
 
     @Test
     public void testTestJobConstructorSetsAllFieldsExists () throws ClassNotFoundException {
+       new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Class jobTestClass = getClassByName("test.JobTest");
         Method testSettingJobIdMethod = null;
 
