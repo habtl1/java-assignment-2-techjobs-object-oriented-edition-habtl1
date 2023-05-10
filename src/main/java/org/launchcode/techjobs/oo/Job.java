@@ -34,6 +34,7 @@ public class Job {
 
 
     public int getId() {
+
         return id;
     }
 
@@ -88,27 +89,28 @@ public class Job {
 
         Job job = (Job) o;
 
-        if (id != job.id) return false;
-        if (!Objects.equals(name, job.name)) return false;
-        if (!Objects.equals(employer, job.employer)) return false;
-        if (!Objects.equals(location, job.location)) return false;
-        if (!Objects.equals(positionType, job.positionType)) return false;
-        return Objects.equals(coreCompetency, job.coreCompetency);
+        return id == job.id;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (employer != null ? employer.hashCode() : 0);
-        result = 31 * result + (location != null ? location.hashCode() : 0);
-        result = 31 * result + (positionType != null ? positionType.hashCode() : 0);
-        result = 31 * result + (coreCompetency != null ? coreCompetency.hashCode() : 0);
-        return result;
+        return Objects.hash(id);
     }
 
     public String toString() {
-        return "ID:" + getId() + "\n" + "Employer:" + "\n" + getEmployer() + "\n" + "Location:" + getLocation() + "\n" + "Position Type:"  + getPositionType() + "\n" + "CoreCompetency:" + getCoreCompetency();
+
+       if (this.employer.getValue().equals("")){
+           this.employer.setValue("Data not available");
+       }
+        if (this.positionType.getValue().equals("")) {
+            this.positionType.setValue("Data not available");
+        }
+       return "\n" + "ID: " + getId() + "\n" +
+               "Name: " + getName() + "\n" +
+               "Employer: " + getEmployer() + "\n" +
+               "Location: " + getLocation() + "\n" +
+               "Position Type: "  + getPositionType() + "\n" +
+               "Core Competency: " + getCoreCompetency() + "\n";
 
     }
 }
