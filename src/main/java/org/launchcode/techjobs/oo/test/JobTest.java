@@ -68,7 +68,7 @@ public class JobTest {
                 "Employer:" + job1.getEmployer() + "\n" +
                 "Location:" + job1.getLocation() + "\n" +
                 "Position Type:" + job1.getPositionType() + "\n" +
-                "CoreCompetency:" + job1.getCoreCompetency() + "\n";
+                "Core Competency:" + job1.getCoreCompetency() + "\n";
                  assertEquals(string, job1.toString());
 
     }
@@ -76,12 +76,12 @@ public class JobTest {
     public void testToStringHandlesEmptyField() {
     Job job1 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
 
-    String expectedData = "\nID: 1\n" +
-            "Name: Product tester\n" +
-            "Employer: Data not available\n" +
-            "Location: Desert\n" +
-            "Position Type: Data not available\n" +
-            "Core Competency: Persistence\n";
+    String expectedData = "\nID:" + job1.getId() +"\n" +
+            "Name:Product tester\n" +
+            "Employer:Data not available\n" +
+            "Location:Desert\n" +
+            "Position Type:Data not available\n" +
+            "Core Competency:Persistence\n";
             assertEquals(expectedData, job1.toString());
 
 
