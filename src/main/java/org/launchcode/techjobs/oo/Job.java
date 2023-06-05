@@ -105,12 +105,12 @@ public class Job {
         if (this.positionType.getValue().equals("")) {
             this.positionType.setValue("Data not available");
         }
-       return "\n" + "ID:" + getId() + "\n" +
-               "Name:" + getName() + "\n" +
-               "Employer:" + getEmployer() + "\n" +
-               "Location:" + getLocation() + "\n" +
-               "Position Type:"  + getPositionType() + "\n" +
-               "Core Competency:" + getCoreCompetency() + "\n";
+       return "\n" + "ID: " + getId() + "\n" +
+               "Name: " + getName() + "\n" +
+               "Employer: " + getEmployer() + "\n" +
+               "Location: " + getLocation() + "\n" +
+               "Position Type: "  + getPositionType() + "\n" +
+               "Core Competency: " + getCoreCompetency() + "\n";
 
     }
 }

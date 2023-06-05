@@ -63,7 +63,7 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData() {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
 
-        String string = "\n" + "ID:" + job1.getId() + "\n" +
+        String string = "\n" + "ID:[  " + job1.getId() + "\n" +
                 "Name:" + job1.getName() + "\n" +
                 "Employer:" + job1.getEmployer() + "\n" +
                 "Location:" + job1.getLocation() + "\n" +
@@ -76,12 +76,12 @@ public class JobTest {
     public void testToStringHandlesEmptyField() {
     Job job1 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
 
-    String expectedData = "\nID:" + job1.getId() +"\n" +
-            "Name:Product tester\n" +
-            "Employer:Data not available\n" +
-            "Location:Desert\n" +
-            "Position Type:Data not available\n" +
-            "Core Competency:Persistence\n";
+    String expectedData = "\n" +"ID:" + job1.getId() + "\n" +
+            "Name:  Product tester\n" +
+            "Employer: Data not available\n" +
+            "Location:  Desert\n" +
+            "Position Type:  Data not available\n" +
+            "Core Competency: Persistence\n";
             assertEquals(expectedData, job1.toString());
 
 
